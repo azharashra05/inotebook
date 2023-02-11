@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import { useNavigate } from 'react-router-dom'
 
-const Login = () => {
+const Login = (props) => {
   const [credentials, setCredentials] = useState({email:"",password:""})
   let navigate=useNavigate()
   const onChange=(e)=>
@@ -28,10 +28,11 @@ const Login = () => {
         //Save the auth token and redirect
         localStorage.setItem('token',json.authToken)
         navigate('/')
+        props.showAlert("Logged in successfully","success")
     }
     else
     {
-        alert(json.error)
+        props.showAlert(json.error,"danger")
     }
   }
   return (
