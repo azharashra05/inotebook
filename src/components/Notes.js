@@ -5,7 +5,7 @@ import Noteitem from './Noteitem'
 
 const Notes = () => {
     const context = useContext(noteContext)
-    const {notes,addNote}=context
+    const {notes}=context
   return (
     <>
       <AddNote/>
