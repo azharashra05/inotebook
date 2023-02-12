@@ -1,4 +1,3 @@
-import { clear } from '@testing-library/user-event/dist/clear'
 import React,{useContext,useState} from 'react'
 import noteContext from '../context/notes/noteContext'
 const AddNote = (props) => {

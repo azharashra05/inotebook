@@ -15,7 +15,7 @@ const NoteState = (props)=>{
         headers:
         {
           'Content-Type': 'application/json',
-          'auth-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjNhZGE2MDc2ZDJhM2Q1YTllNTM5OWMyIn0sImlhdCI6MTY3MjM5OTY3M30.5fr1cFu3TBkkgAI7p_T-nUpkEMQl8_ULwjKefuTwLxQ'
+          'auth-token': localStorage.getItem('token')
         }
       }
       )
@@ -32,7 +32,7 @@ const NoteState = (props)=>{
         headers:
         {
           'Content-Type': 'application/json',
-          'auth-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjNhZGE2MDc2ZDJhM2Q1YTllNTM5OWMyIn0sImlhdCI6MTY3MjM5OTY3M30.5fr1cFu3TBkkgAI7p_T-nUpkEMQl8_ULwjKefuTwLxQ'
+          'auth-token': localStorage.getItem('token')
         },
         body: JSON.stringify({title, description, tag})
       }
@@ -50,12 +50,13 @@ const NoteState = (props)=>{
         headers:
         {
           'Content-Type': 'application/json',
-          'auth-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjNhZGE2MDc2ZDJhM2Q1YTllNTM5OWMyIn0sImlhdCI6MTY3MjM5OTY3M30.5fr1cFu3TBkkgAI7p_T-nUpkEMQl8_ULwjKefuTwLxQ'
+          'auth-token': localStorage.getItem('token')
         },
         body: JSON.stringify({title, description, tag})
       }
       )
       const json=await response.json()
+      console.log(json)
       let newNotes=JSON.parse(JSON.stringify(notes))
       for (let index = 0; index < newNotes.length; index++) {
         const element = newNotes[index];
@@ -79,11 +80,12 @@ const NoteState = (props)=>{
         headers:
         {
           'Content-Type': 'application/json',
-          'auth-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjNhZGE2MDc2ZDJhM2Q1YTllNTM5OWMyIn0sImlhdCI6MTY3MjQwMTQ3MX0.EgQoqC5g8krmu9ah1PqV0Sj8xOerD-CQ4oF3wDwYdVo'
+          'auth-token': localStorage.getItem('token')
         }
       }
       )
       const json=response.json()
+      console.log(json);
       const newNotes=notes.filter((note)=>{return note._id!==id})
       setNotes(newNotes)
     }

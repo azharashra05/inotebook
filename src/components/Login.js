@@ -36,12 +36,12 @@ const Login = (props) => {
     }
   }
   return (
-    <div>
+    <div className='mt-2'>
+      <h2>Login to continue to iNotebook</h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
             <label htmlFor="email" className="form-label">Email address</label>
-            <input type="email" className="form-control" id="email" name="email" value={credentials.email} onChange={onChange} aria-describedby="emailHelp"/>
-            <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
+            <input type="email" className="form-control" id="email" name="email" value={credentials.email} onChange={onChange}/>
         </div>
         <div className="mb-3">
             <label htmlFor="password" className="form-label">Password</label>
